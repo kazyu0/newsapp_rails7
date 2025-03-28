@@ -14,6 +14,6 @@ class ChecksController < ApplicationController
   end
 
   def revert_check
-
+    Check.find_by(user_id: current_user.id, article_id: @article.id).destroy
   end
 end
