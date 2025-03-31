@@ -6,6 +6,9 @@ window.addEventListener('turbo:load', function(){
       const XHR = new XMLHttpRequest();
       XHR.open("GET", `/checks/revert/${articleId}`, true);
       XHR.send();
+      XHR.onload = () => {
+        button.remove()
+      }
     });
   });
 });
